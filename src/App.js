@@ -206,7 +206,7 @@ const App = () => {
                       Python
                     </li>
                   </div>
-                  <a href="https://youtu.be/ArX70FvjG2A" rel="noreferrer" target="_blank" class="underline text-sm">View Project</a>
+                  <a href="https://programmabletrackpad-group18.web.app/" rel="noreferrer" target="_blank" class="underline text-sm">View Project</a>
                 </div>
               </div>
             </div>
