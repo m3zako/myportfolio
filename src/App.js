@@ -173,7 +173,7 @@ const App = () => {
               <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div class="text-white text-center text-xs lg:text-sm xl:text-lg lg:px-4">
                   <h1 class="text-lg font-bold mb-1">AR Glasses</h1>
-                  <p class="text-md mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
+                  <p class="text-md mx-2 my-2"> Worked on a heads up display and Android application for consumer level hardware.</p>
                   <div class="flex flex-wrap justify-center mb-4">
                     <li class="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
                     Java
@@ -215,7 +215,7 @@ const App = () => {
               <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div class="text-white text-center text-xs lg:text-sm">
                   <h1 class="text-lg font-bold mb-1">Energy Solutions</h1>
-                  <p class="mx-2 my-2 lg:mx-8"> Conducted a reserach to propose an energy efficient solution to Duke Energy. 
+                  <p class="mx-2 my-2 lg:mx-8"> Conducted a research to propose an energy efficient solution to Duke Energy. 
                     Curated a refined genetic algorithm using a neural network to find the optimal chemical formual for silicon insulators.</p>
                     <div class="flex flex-wrap justify-center mb-4">
                     <li class="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
