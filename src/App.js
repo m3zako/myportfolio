@@ -177,20 +177,7 @@ const App = () => {
           </div>
         </section>
       </header>
-
-      <div className="bg-gray-100 text-gray-800">
-        <div className="flex flex-col items-center justify-center mb-40 xl:mx-96 lg:px-10 md:mx-10">
-          <h2 className="text-xl ld mb-8 text-gray-800 px-10">hover over any of these projects to learn a little more about them!</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-10">
-            <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project1} alt="Project 1"/>
-              <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                <div className="text-white text-center text-xs lg:text-sm xl:text-lg lg:px-4">
-                  <h1 className="text-lg font-bold mb-1">AR Glasses</h1>
-                  <p className="text-md mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
-                  <div className="flex flex-wrap justify-center mb-4">
-
-      <body class="bg-gray-100 text-gray-800">
+      <div class="bg-gray-100 text-gray-800">
         <div class="flex flex-col items-center justify-center mb-40 xl:mx-96 lg:px-10 md:mx-10">
           <h2 class="text-xl ld mb-8 text-gray-800 px-10">hover over any of these projects to learn a little more about them!</h2>
           <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-10">
@@ -202,8 +189,7 @@ const App = () => {
                   <p class="text-md mx-2 my-2"> Worked on a heads up display and Android application for consumer level hardware.</p>
                   <div class="flex flex-wrap justify-center mb-4">
                     <li class="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
-
-                    Java
+                      Java
                     </li>
                     <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
                       Android Studio
@@ -233,17 +219,7 @@ const App = () => {
                       Python
                     </li>
                   </div>
-                  <a href="https://youtu.be/ArX70FvjG2A" rel="noreferrer" target="_blank" className="underline text-sm">View Project</a>
-                </div>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project3} alt="Project 3" />
-              <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                <div className="text-white text-center text-xs lg:text-sm">
-                  <h1 className="text-lg font-bold mb-1">Energy Solutions</h1>
-                  <p className="mx-2 my-2 lg:mx-8"> Conducted a reserach to propose an energy efficient solution to Duke Energy. 
-                  <a href="https://programmabletrackpad-group18.web.app/" rel="noreferrer" target="_blank" class="underline text-sm">View Project</a>
+                  <a href="https://programmabletrackpad-group18.web.app/" rel="noreferrer" target="_blank" className="underline text-sm">View Project</a>
                 </div>
               </div>
             </div>
@@ -252,7 +228,7 @@ const App = () => {
               <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div class="text-white text-center text-xs lg:text-sm">
                   <h1 class="text-lg font-bold mb-1">Energy Solutions</h1>
-                    Curated a refined genetic algorithm using a neural network to find the optimal chemical formual for silicon insulators.</p>
+                    Conducted a research to propose an energy efficient solution to Duke Energy. Curated a refined genetic algorithm using a neural network to find the optimal chemical formual for silicon insulators.
                     <div className="flex flex-wrap justify-center mb-4">
                     <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
                       Python
