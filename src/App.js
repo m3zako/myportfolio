@@ -10,7 +10,7 @@ import { useState, useRef } from 'react';
 import { FaJava } from 'react-icons/fa';
 import { TiThMenu } from 'react-icons/ti';
 import { TbArrowBigDownFilled } from "react-icons/tb";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SiC, SiJavascript, SiHtml5, SiAssemblyscript, SiPython, SiGit, SiGithub, SiLinkedin } from 'react-icons/si';
 import { Link } from "react-scroll";
 
@@ -85,7 +85,7 @@ const App = () => {
                 variants={menuIconVariants}
                 initial="initial"
                 animate={hovered ? "animate" : "initial"}
-                style={{ display: hovered ? "none" : "block" }}
+                style={{ display: hovered || dropdownOpen ? "none" : "block" }}
                 className='absolute right-2 top-3 text-[28px] fill-gray-800'
               >
                 <TiThMenu />
@@ -94,59 +94,40 @@ const App = () => {
               <motion.div
                 variants={arrowIconVariants}
                 initial="initial"
-                animate={hovered || dropdownOpen ? "animate" : "initial"}
-                style={{ display: hovered ? "block" : "none" }}
+                animate={(hovered || dropdownOpen) ? "animate" : "initial"}
+                style={{ display: hovered || dropdownOpen ? "block" : "none" }}
                 className="absolute right-2 top-3 text-[28px] fill-gray-800"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <TbArrowBigDownFilled />
               </motion.div>
-
+            <AnimatePresence>
               {dropdownOpen && (
                 <motion.ul
-                  className="absolute right-0 top-10 w-40 bg-gray-150 shadow-md rounded-md py-2 z-10"
+                  className="absolute right-0 top-10 w-30 bg-gray-150 shadow-md rounded-md py-2 z-10"
                   variants={dropdownVariants}
                   initial="hidden"
                   animate="visible"
+                  exit={{ opacity: 0, y: -10 }}
                 >
                   <li className="px-4 py-2 text-[20px] text-center hover:bg-gray-200">
-                    <Link
-                      to="projects"
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      exact="true"
-                      offset={-70}
-                    >
+                    <Link to="projects" smooth={true} duration={500} spy={true} exact="true" offset={-70}>
                       Projects
                     </Link>
                   </li>
                   <li className="px-4 py-2 text-[20px] text-center hover:bg-gray-200">
-                    <Link
-                      to="about"
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      exact="true"
-                      offset={-70}
-                    >
+                    <Link to="about" smooth={true} duration={500} spy={true} exact="true" offset={-70}>
                       About
                     </Link>
                   </li>
                   <li className="px-4 py-2 text-[20px] text-center hover:bg-gray-200">
-                    <Link
-                        to="connect"
-                        smooth={true}
-                        duration={500}
-                        spy={true}
-                        exact="true"
-                        offset={-70}
-                    >
+                    <Link to="connect" smooth={true} duration={500} spy={true} exact="true" offset={-70} >
                       Connect
                     </Link>
                   </li>
                 </motion.ul>
               )}
+              </AnimatePresence>
             </li>
           </ul>
         </nav>
@@ -177,32 +158,18 @@ const App = () => {
           </div>
         </section>
       </header>
-
       <div className="bg-gray-100 text-gray-800">
         <div className="flex flex-col items-center justify-center mb-40 xl:mx-96 lg:px-10 md:mx-10">
           <h2 className="text-xl ld mb-8 text-gray-800 px-10">hover over any of these projects to learn a little more about them!</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-10">
             <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project1} alt="Project 1"/>
+              <motion.img className="project-img" src={project1} alt="Project 1" initial={{x:-400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center text-xs lg:text-sm xl:text-lg lg:px-4">
                   <h1 className="text-lg font-bold mb-1">AR Glasses</h1>
                   <p className="text-md mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
                   <div className="flex flex-wrap justify-center mb-4">
-
-      <body class="bg-gray-100 text-gray-800">
-        <div class="flex flex-col items-center justify-center mb-40 xl:mx-96 lg:px-10 md:mx-10">
-          <h2 class="text-xl ld mb-8 text-gray-800 px-10">hover over any of these projects to learn a little more about them!</h2>
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-10">
-            <div class="relative overflow-hidden rounded-xl">
-              <img class="project-img" src={project1} alt="Project 1"/>
-              <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                <div class="text-white text-center text-xs lg:text-sm xl:text-lg lg:px-4">
-                  <h1 class="text-lg font-bold mb-1">AR Glasses</h1>
-                  <p class="text-md mx-2 my-2"> Worked on a heads up display and Android application for consumer level hardware.</p>
-                  <div class="flex flex-wrap justify-center mb-4">
-                    <li class="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
-
+                    <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
                     Java
                     </li>
                     <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
@@ -217,7 +184,7 @@ const App = () => {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project2} alt="Project 2" />
+              <motion.img className="project-img" src={project2} alt="Project 2" initial={{x:400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}} />
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center text-xs lg:text-sm">
                   <h1 className="text-lg font-bold mb-2">Programmable Trackpad</h1>
@@ -238,20 +205,11 @@ const App = () => {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project3} alt="Project 3" />
+              <motion.img className="project-img" src={project3} alt="Project 3" initial={{x:-400}} whileInView={{x:0, transition: {type: "spring", duration: 0.8}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center text-xs lg:text-sm">
                   <h1 className="text-lg font-bold mb-1">Energy Solutions</h1>
                   <p className="mx-2 my-2 lg:mx-8"> Conducted a reserach to propose an energy efficient solution to Duke Energy. 
-                  <a href="https://programmabletrackpad-group18.web.app/" rel="noreferrer" target="_blank" class="underline text-sm">View Project</a>
-                </div>
-              </div>
-            </div>
-            <div class="relative overflow-hidden rounded-xl">
-              <img class="project-img" src={project3} alt="Project 3" />
-              <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                <div class="text-white text-center text-xs lg:text-sm">
-                  <h1 class="text-lg font-bold mb-1">Energy Solutions</h1>
                     Curated a refined genetic algorithm using a neural network to find the optimal chemical formual for silicon insulators.</p>
                     <div className="flex flex-wrap justify-center mb-4">
                     <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
@@ -266,7 +224,7 @@ const App = () => {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <img className="project-img" src={project4} alt="Project 4" />
+              <motion.img className="project-img" src={project4} alt="Project 4" initial={{x:400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center md:text-sm lg:text-lg">
                   <h1 className="text-lg font-bold mb-2">PocketPantry</h1>
@@ -281,7 +239,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col text-gray-800 items-center justify-center mb-32 bg-gray-100" id="about">
+        <motion.div className="flex flex-col text-gray-800 items-center justify-center mb-32 bg-gray-100" initial={{y:300, opacity: 0}} whileInView={{y:0, opacity: 1, transition:{type:"spring", duration:1}}} id="about" viewport={{once:true}}>
           <div className="w-full xl:w-1/2 lg:w-full md:w-full sm:w-1/2 flex flex-col lg:flex-row items-center lg:px-5">
             <div className="text-center lg:text-left sm:text-center mx-8">
               <h1 className="text-3xl mb-4 font-bold">About Me</h1>
@@ -293,9 +251,9 @@ const App = () => {
               <img src={headshot} alt="Profile" className="rounded-3xl" />
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="flex items-center justify-center text-gray-800 mb-32 bg-gray-100 mx-8">
-          <div className="w-full xl:w-1/2 lg:w-full md:w-full sm:w-1/2 px-10">
+          <motion.div className="w-full xl:w-1/2 lg:w-full md:w-full sm:w-1/2 px-10" initial={{y:300, opacity: 0}} whileInView={{y:0, opacity: 1, transition:{type:"spring", duration:1}}} viewport={{once:true}}>
             <h1 className="text-3xl text-center lg:text-left sm:text-center mb-8 font-bold">Skills</h1>
             <div className="flex flex-wrap md:flex-wrap sm:flex-row items-center justify-center" >
               <div className="text-center text-md flex flex-col items-center px-4">
@@ -327,10 +285,10 @@ const App = () => {
                 <span className="mb-2">Git</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         <footer className="flex flex-col items-center justify-center text-gray-800 bg-gray-100 mx-10" id="connect">
-          <div className=" xl:w-1/2 lg:w-full md:w-full flex flex-col lg:flex-row mb-40 md:px-8">
+          <motion.div className=" xl:w-1/2 lg:w-full md:w-full flex flex-col lg:flex-row mb-40 md:px-8" initial={{y:300, opacity: 0}} whileInView={{y:0, opacity: 1, transition:{type:"spring", duration:1}}} viewport={{once:true}}>
             <div>
               <h1 className="text-3xl mb-4 text-center lg:text-left sm:text-center font-bold">Let's Connect!</h1>
               <p className="text-xl text-center lg:text-left md:text-center mb-8 lg:px-0"> If you'd like to connect, feel free to reach out!</p>
@@ -367,7 +325,7 @@ const App = () => {
                 </div>
               </form>
             </div>
-          </div>
+          </motion.div>
         </footer>
       </div>
     </>
