@@ -19,6 +19,7 @@ const App = () => {
   const form = useRef();
   const [hovered, setHovered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -104,11 +105,12 @@ const App = () => {
             <AnimatePresence>
               {dropdownOpen && (
                 <motion.ul
-                  className="absolute right-0 top-10 w-30 bg-gray-150 shadow-md rounded-md py-2 z-10"
+                  className="absolute right-0 top-10 w-30 bg-gray-150 bg-gray-100 shadow-md rounded-md py-2 z-2"
                   variants={dropdownVariants}
                   initial="hidden"
                   animate="visible"
                   exit={{ opacity: 0, y: -10 }}
+                  style={{zIndex:1}}
                 >
                   <li className="px-4 py-2 text-[20px] text-center hover:bg-gray-200">
                     <Link to="projects" smooth={true} duration={500} spy={true} exact="true" offset={-70}>
@@ -147,7 +149,6 @@ const App = () => {
                 initial={{y:"300%"}}
                 animate={{y:"0%"}}
                 transition={{type:"spring", duration:"1.5"}}
-              
               />
             </div>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2" id="projects">
@@ -163,8 +164,8 @@ const App = () => {
           <h2 className="text-xl ld mb-8 text-gray-800 px-10">hover over any of these projects to learn a little more about them!</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-10">
             <div className="relative overflow-hidden rounded-xl">
-              <motion.img className="project-img" src={project1} alt="Project 1" initial={{x:-400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
-              <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <motion.img src={project1} alt="Animation" initial={{x:-200}} whileInView={{x:0, zIndex:0, transition:{type:"spring", duration:1}}} viewport={{once:true}} style={{zIndex:1}}/>
+              <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100" style={{zIndex:1}}>
                 <div className="text-white text-center text-xs lg:text-sm xl:text-lg lg:px-4">
                   <h1 className="text-lg font-bold mb-1">AR Glasses</h1>
                   <p className="text-md mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
@@ -184,7 +185,7 @@ const App = () => {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <motion.img className="project-img" src={project2} alt="Project 2" initial={{x:400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}} />
+              <motion.img src={project2} alt="Project 2" initial={{x:200}} whileInView={{x:0, transition:{type:"spring", duration:1}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center text-xs lg:text-sm">
                   <h1 className="text-lg font-bold mb-2">Programmable Trackpad</h1>
@@ -200,12 +201,12 @@ const App = () => {
                       Python
                     </li>
                   </div>
-                  <a href="https://youtu.be/ArX70FvjG2A" rel="noreferrer" target="_blank" className="underline text-sm">View Project</a>
+                  <a href="https://programmabletrackpad-group18.web.app/" rel="noreferrer" target="_blank" className="underline text-sm">View Project</a>
                 </div>
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <motion.img className="project-img" src={project3} alt="Project 3" initial={{x:-400}} whileInView={{x:0, transition: {type: "spring", duration: 0.8}}} viewport={{once:true}}/>
+              <motion.img src={project3} alt="Project 3" initial={{x:-200}} whileInView={{x:0, transition: {type: "spring", duration: 0.8}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center text-xs lg:text-sm">
                   <h1 className="text-lg font-bold mb-1">Energy Solutions</h1>
@@ -224,7 +225,7 @@ const App = () => {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl">
-              <motion.img className="project-img" src={project4} alt="Project 4" initial={{x:400}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
+              <motion.img src={project4} alt="Project 4" initial={{x:200}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
               <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <div className="text-white text-center md:text-sm lg:text-lg">
                   <h1 className="text-lg font-bold mb-2">PocketPantry</h1>
