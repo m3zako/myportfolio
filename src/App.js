@@ -86,7 +86,7 @@ const App = () => {
                 variants={menuIconVariants}
                 initial="initial"
                 animate={hovered ? "animate" : "initial"}
-                style={{ display: hovered || dropdownOpen ? "none" : "block" }}
+                style={{zIndex:2, display: hovered || dropdownOpen ? "none" : "block" }}
                 className='absolute right-2 top-3 text-[28px] fill-gray-800'
               >
                 <TiThMenu />
@@ -96,7 +96,7 @@ const App = () => {
                 variants={arrowIconVariants}
                 initial="initial"
                 animate={(hovered || dropdownOpen) ? "animate" : "initial"}
-                style={{ display: hovered || dropdownOpen ? "block" : "none" }}
+                style={{zIndex:2, display: hovered || dropdownOpen ? "block" : "none" }}
                 className="absolute right-2 top-3 text-[28px] fill-gray-800"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
@@ -110,7 +110,7 @@ const App = () => {
                   initial="hidden"
                   animate="visible"
                   exit={{ opacity: 0, y: -10 }}
-                  style={{zIndex:1}}
+                  style={{zIndex:2}}
                 >
                   <li className="px-4 py-2 text-[20px] text-center hover:bg-gray-200">
                     <Link to="projects" smooth={true} duration={500} spy={true} exact="true" offset={-70}>
