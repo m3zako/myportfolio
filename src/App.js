@@ -297,7 +297,7 @@ const App = () => {
           </motion.div>
         </div>
       </section>
-      <section className="bg-gray-100 min-h-0">
+      <section className="bg-gray-100 text-gray-800 min-h-0">
         <footer className="max-w-screen-lg mx-auto border-2 border-gray-100" id="connect">
           <motion.div className=" flex flex-col lg:flex-row mb-40 md:px-8" initial={{y:300, opacity: 0}} whileInView={{y:0, opacity: 1, transition:{type:"spring", duration:1}}} viewport={{once:true}}>
             <div className="px-6">
