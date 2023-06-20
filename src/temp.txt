@@ -1,8 +1,0 @@
-<motion.div
-    className="container"
-    initial={{ scale: 0, x: "-50%" }}
-    animate={{ scale: [0, 1, 1], x: ["-50%", "0%", "200%"] }}
-    transition={{ duration: 1.5 }}
-    src="your-image-url"
-    alt="your-image-alt-text"
-  />
