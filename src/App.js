@@ -248,13 +248,13 @@ const App = () => {
                     <h1 className="text-lg font-bold mb-1">Timeout</h1>
                     <p className="mx-2 my-2 lg:mx-8">A personal punch in, punch out app to keep track of tasks.</p>
                       <div className="flex flex-wrap justify-center mb-4">
-                      <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
-                        React Native
-                      </li>
-                      <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 ">
-                        Expo
-                      </li>
-                    </div>
+                        <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
+                          React Native
+                        </li>
+                        <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 ">
+                          Expo
+                        </li>
+                      </div>
                     <a href="https://github.com/m3zako/timeout" rel="noreferrer" target="_blank"className="underline text-sm">View Project</a>
                   </div>
                 </div>
@@ -263,10 +263,17 @@ const App = () => {
                 <motion.img src={project6} alt="Project 6" initial={{x:200}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                   <div className="text-white text-center text-xs lg:text-sm px-auto mx-auto">
-                    <h1 className="text-lg font-bold mb-1">OpenAI Application</h1>
+                    <h1 className="text-lg font-bold mb-1">Clipper</h1>
                     <p className="mx-2 my-2 lg:mx-8">**In Production**</p>
+                    <p className="mx-2 my-2 lg:mx-8">A video game clip uploader</p>
                       <div className="flex flex-wrap justify-center mb-4">
-                    </div>
+                        <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
+                          Angular
+                        </li>
+                        <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 ">
+                          Firebase
+                        </li>
+                      </div>
                   </div>
                 </div>
               </div>
