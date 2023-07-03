@@ -171,7 +171,7 @@ const App = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100" style={{zIndex:1}}>
                   <div className="text-white text-center text-xs lg:text-sm xl:text-lg px-auto mx-auto">
                     <h1 className="text-lg font-bold mb-1">AR Glasses</h1>
-                    <p className="text-md mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
+                    <p className="mx-2 my-2"> Worked on a heads up display and an Android application for consumer level hardware.</p>
                     <div className="flex flex-wrap justify-center mb-4">
                       <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 mb-2">
                       Java
@@ -263,15 +263,12 @@ const App = () => {
                 <motion.img src={project6} alt="Project 6" initial={{x:200}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                   <div className="text-white text-center text-xs lg:text-sm px-auto mx-auto">
-                    <h1 className="text-lg font-bold mb-1">Clipper</h1>
+                    <h1 className="text-lg font-bold mb-1">Pilate Systems</h1>
                     <p className="mx-2 my-2 lg:mx-8">**In Production**</p>
-                    <p className="mx-2 my-2 lg:mx-8">A video game clip uploader</p>
+                    <p className="mx-2 my-2 lg:mx-8">A HIPAA-compliant web app for physical therapists to write and store notes</p>
                       <div className="flex flex-wrap justify-center mb-4">
                         <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2">
-                          Angular
-                        </li>
-                        <li className="inline-block bg-gray-500 text-white py-1 px-3 rounded-full mr-2 ">
-                          Firebase
+                          React
                         </li>
                       </div>
                   </div>
