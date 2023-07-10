@@ -263,7 +263,7 @@ const App = () => {
                 <motion.img src={project6} alt="Project 6" initial={{x:200}} whileInView={{x:0, transition: {type: "spring", duration: 1}}} viewport={{once:true}}/>
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
                   <div className="text-white text-center text-xs lg:text-sm px-auto mx-auto">
-                    <h1 className="text-lg font-bold mb-1">Pilate Systems</h1>
+                    <h1 className="text-lg font-bold mb-1">Pliant Systems</h1>
                     <p className="mx-2 my-2 lg:mx-8">**In Production**</p>
                     <p className="mx-2 my-2 lg:mx-8">A HIPAA-compliant web app for physical therapists to write and store notes</p>
                       <div className="flex flex-wrap justify-center mb-4">
